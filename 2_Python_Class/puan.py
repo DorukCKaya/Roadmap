@@ -6,8 +6,8 @@ class Ogrenci:
 
 
 class Soru:
-    def netSayisi(self):
-        self.net = self.dogruSayisi - self.yanlisSayisi / 4
+    def netSayisi(self, dogruSayisi, yanlisSayisi):
+        self.net = dogruSayisi - yanlisSayisi / 4
 
     def hesapla(self):
         puan = 2 * self.net
@@ -17,15 +17,12 @@ class Soru:
 ogrenciAdi, ogrenciSoyadi, ogrenciSinif = "doruk", "kaya", "1a"
 o1 = Ogrenci(ogrenciAdi, ogrenciSoyadi, ogrenciSinif)
 
-print('doğru sayısı?')
-dogruSayisi = input()
-print('yanlış sayısı')
-yanlisSayisi = input()
+
+dogruSayisi = int(input('doğru sayısı?'))
+yanlisSayisi = int(input('yanlış sayısı?'))
 
 s1 = Soru()
-s1.dogruSayisi = int(dogruSayisi)
-s1.yanlisSayisi = int(yanlisSayisi)
-s1.netSayisi()
+s1.netSayisi(dogruSayisi, yanlisSayisi)
 s1.hesapla()
 
 print(o1.ogrenciSinif + " sınıfından " + o1.ogrenciAdi + " " + o1.ogrenciSoyadi + ", sınavdan " + str(
